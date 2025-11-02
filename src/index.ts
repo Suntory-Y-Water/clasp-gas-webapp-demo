@@ -1,8 +1,9 @@
-import { HelloService } from "@features/hello/hello.service";
+import { HelloService } from '@features/hello/hello.service';
 
-// @ts-expect-error
+// @ts-ignore
+// biome-ignore lint/correctness/noUnusedVariables: <explanation>
 function main(): void {
-  const hiMessage = HelloService.sayHi("CLASP");
+  const hiMessage = HelloService.sayHi('CLASP');
 
   console.log({ hiMessage });
 }

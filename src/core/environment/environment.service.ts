@@ -1,6 +1,4 @@
-/** biome-ignore-all lint/style/useNamingConvention: This file represents the environemnt variables names */
-
-import type { Environment } from "./environment.type";
+import type { Environment } from './environment.type';
 
 /**
  * Environment variables usage approach

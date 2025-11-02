@@ -13,7 +13,7 @@
     "build:clean": "rimraf build/",
     "build:watch": "pnpm build --watch",
     "check:all": "pnpm lint --write && pnpm test",
-    "clasp:create": "rimraf .clasp.json && clasp create --rootDir . --title CHANGE_MY_NAME && pnpm lint --write .clasp.json",
+    "clasp:create": "rimraf .clasp.json && clasp create --rootDir . --title clasp-gas-webapp-demo && pnpm lint --write .clasp.json",
     "clasp:login": "clasp login",
     "deploy": "npm run check:all && npm run build && npm run push",
     "lint": "biome check",
