@@ -20,7 +20,8 @@
     "push": "clasp push",
     "test": "jest",
     "test:cov": "pnpm test --coverage",
-    "test:watch": "pnpm test --watch"
+    "test:watch": "pnpm test --watch",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
