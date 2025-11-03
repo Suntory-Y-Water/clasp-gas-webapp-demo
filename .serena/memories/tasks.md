@@ -32,12 +32,18 @@
 - while文の代わりにfor文を使用して無限ループリスクを軽減
 - 検索結果は最大50件に制限
 
-### Task 3: フロントエンド連携
+### Task 3: フロントエンド連携 ✅
 - [x] `index.html` に検索結果表示用のテーブルを実装（Task 1で完了）
-- [ ] MOCKデータを `google.script.run.withSuccessHandler()` による実際のサーバー呼び出しに置き換え
+- [x] MOCKデータを `google.script.run.withSuccessHandler()` による実際のサーバー呼び出しに置き換え
 - [x] ローディング表示・エラーハンドリングを追加（Task 1で完了）
 
 **完了条件**: フォームから検索を実行し、結果がテーブルに表示される
+
+**実装メモ**:
+- `app/index.html:253-262` でMOCKデータ（setTimeout）を削除
+- `google.script.run.withSuccessHandler()` と `withFailureHandler()` を使用
+- サーバー側の `searchFiles(keyword)` 関数を呼び出し
+- 既存のエラーハンドリング機能を活用
 
 ### Task 4: テストコードの追加
 - [ ] `drive-search.service.spec.ts` で単体テストを作成
@@ -77,7 +83,7 @@
 ## 現在のステータス
 
 **現在のフェーズ**: Phase 2（コア機能実装）
-**次のタスク**: Task 3 - フロントエンド連携（MOCKデータを実際のサーバー呼び出しに置き換え）
+**次のタスク**: Task 4 - テストコードの追加
 
 ---
 
@@ -86,3 +92,4 @@
 - 2025-11-03: 初版作成
 - 2025-11-03: Task 1完了、MOCK実装による段階的アプローチを明記
 - 2025-11-03: Task 2完了、Drive検索機能の実装完了（while文→for文へ安全性改善）
+- 2025-11-03: Task 3完了、MOCKデータをgoogle.script.run呼び出しに置き換え

@@ -250,17 +250,16 @@
       resultsTable.classList.remove('show');
       showMessage('検索中...', 'info');
 
-      // TODO: google.script.run を使用してサーバー側の検索関数を呼び出す
-      // 現在はダミーデータを表示
-      setTimeout(() => {
-        const dummyResults = [
-          { name: 'サンプルファイル1.txt', lastUpdated: '2025-11-03 10:30:00' },
-          { name: 'サンプルファイル2.pdf', lastUpdated: '2025-11-02 15:45:00' }
-        ];
-        displayResults(dummyResults);
-        searchButton.disabled = false;
-        searchInput.disabled = false;
-      }, 500);
+      google.script.run
+        .withSuccessHandler((results) => {
+          displayResults(results);
+          searchButton.disabled = false;
+          searchInput.disabled = false;
+        })
+        .withFailureHandler((error) => {
+          handleError(error);
+        })
+        .searchFiles(keyword);
     }
 
     // イベントリスナーの設定
