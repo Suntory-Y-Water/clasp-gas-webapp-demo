@@ -18,12 +18,19 @@
 
 ## Phase 2: コア機能実装
 
-### Task 2: Drive検索機能の実装
-- [ ] `src/features/drive-search/` ディレクトリを作成
-- [ ] `drive-search.service.ts` で `DriveApp.searchFiles()` を実装
-- [ ] `google.script.run` で呼び出せるようにする
-    
+### Task 2: Drive検索機能の実装 ✅
+- [x] `src/features/drive-search/` ディレクトリを作成
+- [x] `drive-search.service.ts` で `DriveApp.searchFiles()` を実装
+- [x] `google.script.run` で呼び出せるようにする
+
 **完了条件**: サーバー側でDrive検索が実行できる関数が完成
+
+**実装メモ**:
+- `src/features/drive-search/drive-search.type.ts` で型定義を作成
+- `src/features/drive-search/drive-search.service.ts` で `DriveSearchService.searchFiles()` を実装
+- `src/index.ts:53-55` にグローバル関数 `searchFiles()` を追加
+- while文の代わりにfor文を使用して無限ループリスクを軽減
+- 検索結果は最大50件に制限
 
 ### Task 3: フロントエンド連携
 - [x] `index.html` に検索結果表示用のテーブルを実装（Task 1で完了）
@@ -70,7 +77,7 @@
 ## 現在のステータス
 
 **現在のフェーズ**: Phase 2（コア機能実装）
-**次のタスク**: Task 2 - Drive検索機能の実装
+**次のタスク**: Task 3 - フロントエンド連携（MOCKデータを実際のサーバー呼び出しに置き換え）
 
 ---
 
@@ -78,3 +85,4 @@
 
 - 2025-11-03: 初版作成
 - 2025-11-03: Task 1完了、MOCK実装による段階的アプローチを明記
+- 2025-11-03: Task 2完了、Drive検索機能の実装完了（while文→for文へ安全性改善）
